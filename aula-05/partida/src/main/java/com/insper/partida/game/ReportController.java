@@ -31,12 +31,8 @@ public class ReportController {
         }
 
         HashMap<Integer, Integer> count = new HashMap<>();
-        for (int i = 0; i < 100; i++) {
-            for (int j = 0 ; j < nums.size(); j++) {
-                if (nums.get(j) == i) {
-                    count.merge(i, 1, Integer::sum);
-                }
-            }
+        for (int j = 0 ; j < nums.size(); j++) {
+            count.merge(nums.get(i), 1, Integer::sum);
         }
         return count;
     }
