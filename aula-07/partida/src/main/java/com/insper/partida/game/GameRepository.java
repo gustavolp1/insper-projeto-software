@@ -12,11 +12,11 @@ import java.util.List;
 public interface GameRepository extends MongoRepository<Game, String> {
     Game findByIdentifier(String identifier);
 
-    Page<Game> findByHomeAndAway(Team tHome, Team tAway, Pageable pageable);
+    Page<Game> findByHomeAndAway(String tHome, String tAway, Pageable pageable);
 
     Page<Game> findByAttendanceGreaterThan(Integer attendance, Pageable pageable);
 
-    List<Game> findByHomeOrAway(String home, String away);
+    List<Game> findByHomeOrAway(String identifier, String identifier1);
 
 
     //@Query("select sum(g.scoreHome) from Game g where g.home = ?1")
